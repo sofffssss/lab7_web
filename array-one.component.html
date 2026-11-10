@@ -1,0 +1,51 @@
+<section class="card">
+  <div class="content">
+    <h2>Завдання: Одновимірні масиви</h2>
+    <p class="task-desc">
+      Знайти добуток всіх елементів масиву цілих чисел, менших 0.
+      Розмірність масиву - 10. Заповнення масиву здійснити з клавіатури.
+    </p>
+    
+    <div class="input-grid">
+      <input 
+        *ngFor="let num of numbers; let i = index; trackBy: trackByIndex" 
+        type="text" 
+        [value]="num === 0 ? '' : num" 
+        (input)="onValueChange($event, i)"
+        placeholder="0"
+        class="num-input"
+      />
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" (click)="calculate()">Розрахунок</button>
+      <button class="btn btn-secondary" (click)="clear()">Очистити</button>
+    </div>
+    
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </div>
+</section>
+
+<section class="card" *ngIf="hasResult">
+  <div class="content">
+    <h2>Результати обрахунків</h2>
+    
+    <div class="result-block">
+      <h3>Введений масив:</h3>
+      <div class="badges">
+        <span *ngFor="let a of arrayOne.a" class="badge" [ngClass]="{'badge-negative': a < 0}">
+          {{ a }}
+        </span>
+      </div>
+    </div>
+
+    <div class="result-block final-result">
+      <p *ngIf="arrayOne.hasNegative">
+        Добуток від'ємних елементів = <strong>{{ arrayOne.product }}</strong>
+      </p>
+      <p *ngIf="!arrayOne.hasNegative" class="warning-text">
+        У масиві немає від'ємних елементів (добуток = 0)
+      </p>
+    </div>
+  </div>
+</section>

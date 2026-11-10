@@ -1,0 +1,42 @@
+<section class="flex">
+  <div class="content">
+    <h2>Завдання двовимірні масиви</h2>
+    <p>
+      Дано натуральне число n. З'ясувати, скільки додатніх елементів
+      містить масив A [1..n, 1..n], якщо a<sub>ij</sub> = sin(i + j/2).
+    </p>
+    <div>
+      <input
+        type="number"
+        min="1"
+        max="20"
+        placeholder="Введіть n"
+        [(ngModel)]="nInput"
+        class="input-num"
+      />
+      <button class="btn" (click)="calculate()">
+        <span>Розрахунок</span>
+      </button>
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="flex" *ngIf="hasResult">
+  <div>
+    <h2>Двовимірний масив</h2>
+    <div class="flex-row flex-wrap">
+      <table>
+        <tr *ngFor="let row of arrayTwo.a; let i = index">
+          <td *ngFor="let val of row; let j = index">
+            {{ val.toFixed(3) }}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <h2>Результати обрахунків</h2>
+    <div class="flex-row flex-wrap">
+      <p>Кількість додатніх елементів = {{ arrayTwo.positiveCount }}</p>
+    </div>
+  </div>
+</section>

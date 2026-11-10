@@ -1,0 +1,22 @@
+:root {
+  --bg-color: #1a252f;
+  --main-bg: #2c3e50;
+  --text-color: #ecf0f1;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+/* Плавна поява контенту */
+router-outlet + * {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

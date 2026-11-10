@@ -1,0 +1,143 @@
+.card {
+  background: #2c3e50;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 90%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.task-desc {
+  color: #bdc3c7;
+  text-align: center;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* Сітка для 10 чисел */
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.num-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #34495e;
+  background: #ecf0f1;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.num-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Кнопки */
+.actions {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #27ae60;
+  color: white;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #2ecc71;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: #7f8c8d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #95a5a6;
+}
+
+/* Результати */
+.result-block {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.badge {
+  padding: 8px 15px;
+  background: #34495e;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  border: 1px solid #7f8c8d;
+}
+
+.badge-negative {
+  background: #c0392b;
+  border-color: #e74c3c;
+}
+
+.final-result {
+  font-size: 20px;
+  background: #1a252f;
+  padding: 20px;
+  border-radius: 8px;
+  color: #ecf0f1;
+}
+
+.final-result strong {
+  color: #f1c40f;
+  font-size: 24px;
+}
+
+.warning-text {
+  color: #e67e22;
+}
+
+.error {
+  color: #e74c3c;
+  margin-top: 15px;
+  font-weight: bold;
+}
